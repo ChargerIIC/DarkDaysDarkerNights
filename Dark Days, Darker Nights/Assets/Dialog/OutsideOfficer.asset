@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740e3a72aec82c147ba72d7ab4df09ee, type: 3}
+  m_Name: OutsideOfficer
+  m_EditorClassIdentifier: 
+  entries:
+  - id: Introduction
+    maxLineId: 4
+    speakers:
+    - 
+    - OutsideGuard
+    - Player
+  - id: RepeatDialog
+    maxLineId: 1
+    speakers:
+    - OutsideGuard
+  lines:
+  - id: 0
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 01000000010000000200000003000000
+    position: {x: 10, y: 10}
+    userData: Greetings Officer {PlayerName}, I wasn't away that they had assigned
+      this case to the new kid. Would have thought something as important as a missing
+      hamster would rate someone more...senior. No Offense.
+    speaker: OutsideGuard
+  - id: 1
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 04000000
+    position: {x: 174, y: 88}
+    userData: I have a degree in HamsterLocation
+    speaker: Player
+  - id: 2
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 04000000
+    position: {x: 160, y: 10}
+    userData: I have Hamster-like Powers
+    speaker: Player
+  - id: 3
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 05000000
+    position: {x: 166, y: 171}
+    userData: You Mother is a Hamster
+    speaker: Player
+  - id: 4
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 06000000
+    position: {x: 426, y: 107}
+    userData: Really? Well I suppose it won't hurt to let a greenhorn like you try
+    speaker: OutsideGuard
+  - id: 5
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 06000000
+    position: {x: 439, y: 202}
+    userData: Well maybe if your department was better at the whole 'Paranormal' thing
+      she'd be human by now. She's still my mother though and I'll hear it for a week
+      if you don't locate this hamster.
+    speaker: OutsideGuard
+  - id: 6
+    dialogueEntry: Introduction
+    dialogue: 
+    output: 
+    position: {x: 598, y: 124}
+    userData: Just Remeber that this hamster is an important part of the hamster community
+    speaker: OutsideGuard
+  - id: 0
+    dialogueEntry: RepeatDialog
+    dialogue: 
+    output: 
+    position: {x: 10, y: 10}
+    userData: Remeber. Find the Hamster, Save the Prototype. No pressure.
+    speaker: OutsideGuard
