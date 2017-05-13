@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Passable
+  - Unpassable
+  - Interactable
+  - Npc
+  - Player
   - 
   - 
   - 
