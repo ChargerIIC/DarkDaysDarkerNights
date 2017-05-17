@@ -1012,6 +1012,9 @@ GameObject:
   - component: {fileID: 942460806}
   - component: {fileID: 942460804}
   - component: {fileID: 942460803}
+  - component: {fileID: 942460805}
+  - component: {fileID: 942460810}
+  - component: {fileID: 942460811}
   m_Layer: 0
   m_Name: _Managers
   m_TagString: Untagged
@@ -1041,6 +1044,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640927e591a22e340ac72132cceb9c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &942460805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942460802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b983b5fad6a07e047af8ebac9c460ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 11420132, guid: 449cfd712c7e3a44e97e738c99760601, type: 2}
 --- !u!114 &942460806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1105,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942460810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942460802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5346ab8765ce6bd4bb35ef73ede0c7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &942460811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942460802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a67bc025d4d58344b82892b5b8bfff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  languageDatabase: {fileID: 11400000, guid: 883cb64e0f1174f40b669db1c6ff84d8, type: 2}
+  settingsDatabase: {fileID: 11400000, guid: 6998f891ad817074e9b414c7d77db3ce, type: 2}
+  questDatabase: {fileID: 11400000, guid: 07fadc1207ef96e4bb80135e2efd2b19, type: 2}
+  questWindowUI: {fileID: 11410552, guid: b5acabd1c2a301e4b953d280fa75da62, type: 2}
 --- !u!1001 &1003819629
 Prefab:
   m_ObjectHideFlags: 0
