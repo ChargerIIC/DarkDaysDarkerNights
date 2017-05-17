@@ -529,47 +529,6 @@ RectTransform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 381f2680f281e244eb33ca1608e0a5f1, type: 2}
   m_PrefabInternal: {fileID: 2075146018}
---- !u!1 &561832226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 561832227}
-  - component: {fileID: 561832228}
-  m_Layer: 0
-  m_Name: _RangeHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &561832227
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 561832226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 831435359}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &561832228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 561832226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26fe86cdcb2d03844b81e0cec95d7741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _useRange: 10
 --- !u!1 &575201200
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogue: {fileID: 11400000, guid: b0a929ed427b87549be13b7960967acb, type: 2}
   _ownerName: Officer Cowen
-  _ownerIcon: {fileID: 0}
+  _ownerIcon: {fileID: 21300000, guid: 11a6f9c7628ad554787a77edca7d870b, type: 3}
   _dialogueCamera: {fileID: 575201206}
   playAudio: 1
   playAnimations: 1
@@ -920,7 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useWhenPlayerComesInRange: 0
-  blockPlayerInput: 0
+  blockPlayerInput: 1
   _window:
     useDynamicSearch: 0
     name: 
@@ -963,6 +922,21 @@ MonoBehaviour:
     texture: {fileID: 2800000, guid: 6c3dac5fbfc5b864eaa0125c71baaffa, type: 3}
     hotspot: {x: 0, y: 0}
     cursorMode: 0
+--- !u!54 &831435362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831435355}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &876406518
 Prefab:
   m_ObjectHideFlags: 0
@@ -2491,27 +2465,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400152, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6996385895b383749b266464bf872c69, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6996385895b383749b266464bf872c69, type: 3}
