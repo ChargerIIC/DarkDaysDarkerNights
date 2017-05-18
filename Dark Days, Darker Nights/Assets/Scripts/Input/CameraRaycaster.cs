@@ -24,6 +24,8 @@ public class CameraRaycaster : MonoBehaviour
 
     void Update()
     {
+        if (Camera.main == null)
+            return;
         // Check if pointer is over an interactable UI element
         if (EventSystem.current.IsPointerOverGameObject())
         {

@@ -21,4 +21,4 @@ MonoBehaviour:
     type: 2}
   playerInputNodeUIPrefab: {fileID: 11422416, guid: 64236d8d729d64c48a84426822dc642f,
     type: 2}
-  playerDialogueIcon: {fileID: 0}
+  playerDialogueIcon: {fileID: 21300000, guid: 335c5185535069c409adc3b8fd09fd3e, type: 3}
