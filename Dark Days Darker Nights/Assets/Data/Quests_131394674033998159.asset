@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Quests_131394674033998159
   m_EditorClassIdentifier: 
   quests:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a829d9bd82e73a14e816e10231b41871, type: 2}
   achievements: []
