@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxActiveQuests: 10
   objectUseDistance: 10
-  defaultRewardRowUI: {fileID: 0}
-  defaultTaskRowUI: {fileID: 0}
+  defaultRewardRowUI: {fileID: 11462060, guid: ae760b2cdb27ec74e8b47e66373cf9b7, type: 2}
+  defaultTaskRowUI: {fileID: 11480520, guid: 8f95899e623d6b144af6b9a0b71d7e4d, type: 2}
   defaultNodeUIPrefab: {fileID: 11405600, guid: 982f06a5bbe6fd54aa4065d72fdfd5bc,
     type: 2}
-  playerDecisionNodeUI: {fileID: 11439442, guid: 7e3f2e6d20e5b9448a3f81ea52c986ad,
+  playerDecisionNodeUI: {fileID: 114856332212001468, guid: 170b6f5d4d60d3f46aa233d2e90ed486,
     type: 2}
   playerInputNodeUIPrefab: {fileID: 11422416, guid: 64236d8d729d64c48a84426822dc642f,
     type: 2}

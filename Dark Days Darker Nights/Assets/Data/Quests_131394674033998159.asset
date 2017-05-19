@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9739c21834b07e4b982fe8342184783, type: 3}
   m_Name: Quests_131394674033998159
   m_EditorClassIdentifier: 
-  quests: []
+  quests:
+  - {fileID: 0}
   achievements: []
