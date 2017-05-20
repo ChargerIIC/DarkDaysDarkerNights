@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b75a309ff767a4bb3ede0d5c1d2f6f, type: 3}
   m_Name: MainLanguageDb
   m_EditorClassIdentifier: 
-  _serializedJsonString: '{"_lang":"en-US","_localizedStrings":{"NO_KEY":"","e34d9590-bfb3-43eb-a7e0-a8926a949a40":"Who
+  _serializedJsonString: '{"_lang":"en-US","_localizedStrings":{"e34d9590-bfb3-43eb-a7e0-a8926a949a40":"Who
     t","2cc5c5e2-c103-464b-a12f-ea80cfc722c2":"I see the uniform but I don''t recognize
     the name. Who the hell are you?","75904b6c-ac64-4d65-989c-ff8b61e9e7f0":"I''m
     the new Detective","cdf403f1-57fe-41d7-af94-d493659f7904":"Father Christmas, Have
