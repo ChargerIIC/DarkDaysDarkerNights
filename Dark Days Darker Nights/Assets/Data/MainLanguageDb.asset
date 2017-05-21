@@ -11,15 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b75a309ff767a4bb3ede0d5c1d2f6f, type: 3}
   m_Name: MainLanguageDb
   m_EditorClassIdentifier: 
-  _serializedJsonString: '{"_lang":"en-US","_localizedStrings":{"e34d9590-bfb3-43eb-a7e0-a8926a949a40":"Who
+  _serializedJsonString: '{"_lang":"en-US","_localizedStrings":{"3b881724-70d7-4ee4-b277-e8f99b789a3d":"Junior
+    Detective {PlayerName}, {Boss} Sent me.","e34d9590-bfb3-43eb-a7e0-a8926a949a40":"Who
     t","2cc5c5e2-c103-464b-a12f-ea80cfc722c2":"I see the uniform but I don''t recognize
     the name. Who the hell are you?","75904b6c-ac64-4d65-989c-ff8b61e9e7f0":"I''m
-    the new Detective","cdf403f1-57fe-41d7-af94-d493659f7904":"Father Christmas, Have
-    you been good this year?","797c7b8b-b2b1-4c37-b631-dd81daccc8ad":"Detective? I''ll
-    belive it when I see it. Just go inside and meet with Officer Jake, he''ll fill
-    you in","55547e91-d891-4bac-a5e3-afba0f3a6d5d":"Ha Ha. Get your wise ass inside
-    kid. Officer Jake will deal with you.","c717c2f2-294d-4939-bf6b-708dafd89872":"Find
+    the new Detective","cdf403f1-57fe-41d7-af94-d493659f7904":"Father Christmas","797c7b8b-b2b1-4c37-b631-dd81daccc8ad":"Detective?
+    I''ll belive it when I see it. Just go inside and meet with Officer Jake, he''ll
+    fill you in","55547e91-d891-4bac-a5e3-afba0f3a6d5d":"Ha Ha. Get your wise ass
+    inside kid. Officer Jake will deal with you.","c717c2f2-294d-4939-bf6b-708dafd89872":"Find
     the Hamster","50d8fb96-24e4-4777-8a58-f21090747518":"Find the Missing Hamster","a4f2ea0e-c4a2-44b5-9df7-1cb6fd20a3dd":"Talk
-    to Officer Jake Hammond","b8fc71e6-3719-44bf-bd6e-e676071dff51":"Find the Hamster"},"_localizedObjects":{}}'
+    to Officer Jake Hammond","b8fc71e6-3719-44bf-bd6e-e676071dff51":"Find the Hamster","4319f355-900a-4d47-a8ed-078c51be0536":"Father
+    Christamas, Have you been a good little boy this year?"},"_localizedObjects":{}}'
   _objectReferences: []
   _lang: en-US
