@@ -19,6 +19,7 @@ namespace DarkDays.Player
         // Use this for initialization
         void Start()
         {
+            GameObject.DontDestroyOnLoad(this);
             rayCaster = FindObjectOfType<CameraRaycaster>();
             rayCaster.notifyMouseClickObservers += ProcessMouseClick;
         }
