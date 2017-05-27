@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 
     public GameManager()
     {
+        SceneStartSettings = new SceneSettingDictionary();
     }
 
 	// Use this for initialization
@@ -33,4 +34,6 @@ public class GameManager : MonoBehaviour {
     void Update () {
 		
 	}
+
+    public SceneSettingDictionary SceneStartSettings ;
 }

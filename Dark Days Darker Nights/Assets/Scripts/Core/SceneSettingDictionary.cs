@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
+[Serializable]
 public class SceneSettingDictionary : SerializableDictionary<string, object>
 {
     /// <summary>
