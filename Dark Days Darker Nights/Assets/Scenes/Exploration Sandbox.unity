@@ -15617,7 +15617,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -37379,7 +37379,7 @@ MonoBehaviour:
   maxForegroundIndex: 10
 --- !u!114 &1306470923
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 114473372238261600, guid: 807c1bf0dfb906e41a3889698590b543,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -37403,9 +37403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - item: {fileID: 11476484, guid: 4f6c5d3910c9f024c8df75227f0ed4f3, type: 2}
-    amount: 2
-  - item: {fileID: 11429768, guid: d7fab5330f7396d469a6b502e537a6f7, type: 2}
+  - item: {fileID: 114404424827748388, guid: a2a0eea742f3a6c48bdfa93b334805bf, type: 2}
     amount: 1
   useForceSet: 0
 --- !u!114 &1306470925
@@ -37522,7 +37520,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -53096,7 +53094,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterUI: {fileID: 818166405}
-  _inventoryCollections: []
+  _inventoryCollections:
+  - {fileID: 1306470929}
+  - {fileID: 0}
   _skillbarCollection: {fileID: 818166406}
   dynamicallyFindUIElements: 0
   characterCollectionName: Character
