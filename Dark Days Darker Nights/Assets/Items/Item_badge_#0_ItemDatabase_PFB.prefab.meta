@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: a113b7c6392da75499abbc6d8a8387de
-timeCreated: 1496458138
+guid: a2a0eea742f3a6c48bdfa93b334805bf
+labels:
+- InventoryProPrefab
+timeCreated: 1496459408
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 100100000
