@@ -37,5 +37,9 @@ namespace DarkDays.Player
         {
 
         }
+
+        #region Public Properties
+
+        #endregion Public Properties
     }
 }

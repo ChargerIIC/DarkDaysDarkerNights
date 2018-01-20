@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -71,23 +71,26 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 3
+    m_MixedBakeMode: 2
     m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -107,6 +110,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 0612b2797b5947d43836c6f55e8f3993, type: 2}
 --- !u!1 &1461824
 GameObject:
@@ -784,10 +789,10 @@ RectTransform:
   m_Father: {fileID: 157714144}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 38, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &31575990
 MonoBehaviour:
@@ -1068,19 +1073,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 1, g: 1, b: 1, a: 1}
-  completedColor: {r: 1, g: 1, b: 1, a: 0.54901963}
-  inActiveColor: {r: 1, g: 1, b: 1, a: 0.54901963}
+  completedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inActiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hideProgressWhenCompleted: 1
   hideProgressWhenInActive: 1
   taskName: {fileID: 0}
   taskDescription: {fileID: 0}
   taskIcon: {fileID: 0}
-  statusMessage: {fileID: 902667895}
+  statusMessage: {fileID: 0}
   progress:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
-    roundToDecimals: 3
-    clearTextWhenZero: 0
+    roundToDecimals: 1
+    clearTextWhenZero: 1
     slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
@@ -1091,7 +1096,7 @@ MonoBehaviour:
     clearTextWhenZero: 1
     slider: {fileID: 0}
     hideSliderWhenZero: 0
-    imageFill: {fileID: 1536853154}
+    imageFill: {fileID: 0}
   interpSpeed: 1
   interpCurve:
     serializedVersion: 2
@@ -1130,6 +1135,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &39219331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1437,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1446,6 +1453,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1808,6 +1816,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &87044872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,8 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 512988b818807c343b5bf93ea8be5fac, type: 2}
+  _equipmentTypes: []
 --- !u!114 &93285401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,12 +2085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 508766866}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1479591241}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -2520,9 +2528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 2084291095}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 106920261}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -2655,10 +2663,10 @@ RectTransform:
   m_Father: {fileID: 410093424}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 38, y: -10}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &118657413
 MonoBehaviour:
@@ -3283,10 +3291,10 @@ RectTransform:
   m_Father: {fileID: 1540491180}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 96, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &157714145
 MonoBehaviour:
@@ -3337,14 +3345,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1306470929}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 31575991}
-    _icon: {fileID: 2080979899}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &157714148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3882,9 +3890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: e836cf6f0bff2fe43b693bcc003503cb, type: 2}
-  - {fileID: 11400000, guid: 343f0a3937e8d1948bb7c68da1e7fff6, type: 2}
+  _equipmentTypes: []
 --- !u!114 &188409116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3925,12 +3931,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 194029599}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1908081079}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -4176,13 +4182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1510110069}
-    _icon: {fileID: 271867871}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &194189801
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4657,7 +4663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817dff4da163d5941954cf6caafa6d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerPriorities: 0a0000000b0000000900000008000000
+  layerPriorities: 
 --- !u!114 &215157249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4670,7 +4676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d3968294210ba4a9d2bb96dfa74a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 1201001764}
+  m_Target: {fileID: 0}
   m_AutoTargetPlayer: 1
   m_UpdateType: 0
   m_MoveSpeed: 3
@@ -4696,7 +4702,7 @@ MonoBehaviour:
   clipMoveTime: 0.05
   returnTime: 0.4
   sphereCastRadius: 0.1
-  visualiseInEditor: 1
+  visualiseInEditor: 0
   closestDistance: 0.5
   dontClipTag: Player
 --- !u!54 &215157251
@@ -4771,9 +4777,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_CellSize: {x: 40, y: 40}
-  m_Spacing: {x: 5, y: 5}
-  m_ColumnsCount: 7
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_ColumnsCount: 5
 --- !u!114 &216402681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4821,10 +4827,10 @@ RectTransform:
   m_Father: {fileID: 552356457}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &220380886
 MonoBehaviour:
@@ -5090,7 +5096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: CraftingStandard
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -5264,24 +5270,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5542aeba6eb13fa4b99a4c6673df9425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startCraftingCategory: {fileID: 11400000, guid: c2340ccfa80a631449e9795624adce4c,
-    type: 2}
-  _cancelCraftingOnWindowClose: 0
+  _startCraftingCategory: {fileID: 0}
+  _cancelCraftingOnWindowClose: 1
   _forceSingleInstance: 0
   mainItemsCollection: {fileID: 0}
   storeRewardUIItemsInCollection: {fileID: 0}
-  blueprintItemResultContainer: {fileID: 970843271}
-  blueprintItemResultPrefab: {fileID: 11430698, guid: 463a0ccbc70539340a0a080ffc17c150,
-    type: 2}
+  blueprintItemResultContainer: {fileID: 0}
+  blueprintItemResultPrefab: {fileID: 0}
   blueprintTitle: {fileID: 0}
-  blueprintDescription: {fileID: 1101000803}
-  blueprintCraftCost: {fileID: 1900755079}
+  blueprintDescription: {fileID: 0}
+  blueprintCraftCost: {fileID: 0}
   blueprintCraftingProgress:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
-    slider: {fileID: 1708602693}
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -5289,21 +5293,18 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  blueprintCraftButton: {fileID: 848610241}
+  blueprintCraftButton: {fileID: 0}
   craftAnimation: {fileID: 0}
-  currentCategoryTitle: {fileID: 453354680}
+  currentCategoryTitle: {fileID: 0}
   currentCategoryDescription: {fileID: 0}
-  blueprintsContainer: {fileID: 1434815214}
-  blueprintCategoryPrefab: {fileID: 11423462, guid: 7ffe2a8b78ddf3041b51bcc046233c75,
-    type: 2}
-  blueprintButtonPrefab: {fileID: 11408840, guid: 952aa0d61d12d404489093b43a903615,
-    type: 2}
-  blueprintRequiredItemPrefab: {fileID: 11430698, guid: 463a0ccbc70539340a0a080ffc17c150,
-    type: 2}
-  blueprintRequiredItemsContainer: {fileID: 1325549484}
-  blueprintCraftAmountInput: {fileID: 1705404364}
-  noBlueprintSelectedPage: {fileID: 370494065}
-  blueprintCraftPage: {fileID: 1791365913}
+  blueprintsContainer: {fileID: 0}
+  blueprintCategoryPrefab: {fileID: 0}
+  blueprintButtonPrefab: {fileID: 0}
+  blueprintRequiredItemPrefab: {fileID: 0}
+  blueprintRequiredItemsContainer: {fileID: 0}
+  blueprintCraftAmountInput: {fileID: 0}
+  noBlueprintSelectedPage: {fileID: 0}
+  blueprintCraftPage: {fileID: 0}
   itemsAvailableColor: {r: 1, g: 1, b: 1, a: 1}
   itemsNotAvailableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &230607890
@@ -6116,174 +6117,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 252559134}
---- !u!1 &254478127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 254478138}
-  - component: {fileID: 254478137}
-  - component: {fileID: 254478136}
-  - component: {fileID: 254478135}
-  - component: {fileID: 254478134}
-  - component: {fileID: 254478133}
-  - component: {fileID: 254478132}
-  - component: {fileID: 254478131}
-  - component: {fileID: 254478130}
-  - component: {fileID: 254478129}
-  - component: {fileID: 254478128}
-  m_Layer: 0
-  m_Name: _Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &254478128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91851945aef4d1d41bddc63ee57e5008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneItemDatabase: {fileID: 11400000, guid: 859a7e2ff86f9e340a55508cef76db92, type: 2}
---- !u!114 &254478129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5626d6fa89eaa4448a9b06f15a72bcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 5bc7e835d3e407143825cf04f5f2a542, type: 2}
---- !u!114 &254478130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6cc871d223455448be20032c509127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &254478131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f52d9b59a4eab408b9bdd28ad62762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bank: {fileID: 0}
-  loot: {fileID: 0}
-  vendor: {fileID: 0}
-  notice: {fileID: 0}
-  craftingStandard: {fileID: 0}
-  craftingLayout: {fileID: 0}
-  contextMenu: {fileID: 0}
-  _uiCamera: {fileID: 0}
-  uiRoot: {fileID: 818166403}
-  confirmationDialog: {fileID: 0}
-  buySellDialog: {fileID: 0}
-  intValDialog: {fileID: 0}
-  unstackDialog: {fileID: 0}
-  _sceneLangDatabase: {fileID: 11400000, guid: 2b0f378811f188648bb88e74ce4503f1, type: 2}
---- !u!114 &254478132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159cb05ebb2a3ab47b277dc3689b6a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _defaultDatabase: {fileID: 11400000, guid: c8c89a1615cf1374bb767555c5eea4f1, type: 2}
-  _databases:
-  - {fileID: 11400000, guid: 5ab7377fa46e87f4fac594b5b7c99ad9, type: 2}
---- !u!114 &254478133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb907a0ba69a9540afff762ecaaf8d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &254478134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5346ab8765ce6bd4bb35ef73ede0c7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &254478135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640927e591a22e340ac72132cceb9c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &254478136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5b2f6ce23db61428413652c07176e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &254478137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643c4f48ec8269e42a3dc311f3f68c93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 16da30de201fc844a9e2bafa43fb9df8, type: 2}
---- !u!4 &254478138
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 254478127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254761474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,7 +6266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: CraftingStandard
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -6607,24 +6440,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5542aeba6eb13fa4b99a4c6673df9425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startCraftingCategory: {fileID: 11400000, guid: c2340ccfa80a631449e9795624adce4c,
-    type: 2}
-  _cancelCraftingOnWindowClose: 0
+  _startCraftingCategory: {fileID: 0}
+  _cancelCraftingOnWindowClose: 1
   _forceSingleInstance: 0
   mainItemsCollection: {fileID: 0}
   storeRewardUIItemsInCollection: {fileID: 0}
-  blueprintItemResultContainer: {fileID: 676007080}
-  blueprintItemResultPrefab: {fileID: 11430698, guid: 463a0ccbc70539340a0a080ffc17c150,
-    type: 2}
+  blueprintItemResultContainer: {fileID: 0}
+  blueprintItemResultPrefab: {fileID: 0}
   blueprintTitle: {fileID: 0}
-  blueprintDescription: {fileID: 176162165}
-  blueprintCraftCost: {fileID: 1906836413}
+  blueprintDescription: {fileID: 0}
+  blueprintCraftCost: {fileID: 0}
   blueprintCraftingProgress:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
-    slider: {fileID: 1808819922}
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -6632,21 +6463,18 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  blueprintCraftButton: {fileID: 986421755}
+  blueprintCraftButton: {fileID: 0}
   craftAnimation: {fileID: 0}
-  currentCategoryTitle: {fileID: 1401086050}
+  currentCategoryTitle: {fileID: 0}
   currentCategoryDescription: {fileID: 0}
-  blueprintsContainer: {fileID: 1790827287}
-  blueprintCategoryPrefab: {fileID: 11423462, guid: 7ffe2a8b78ddf3041b51bcc046233c75,
-    type: 2}
-  blueprintButtonPrefab: {fileID: 11408840, guid: 952aa0d61d12d404489093b43a903615,
-    type: 2}
-  blueprintRequiredItemPrefab: {fileID: 11430698, guid: 463a0ccbc70539340a0a080ffc17c150,
-    type: 2}
-  blueprintRequiredItemsContainer: {fileID: 1769149907}
-  blueprintCraftAmountInput: {fileID: 1836579844}
-  noBlueprintSelectedPage: {fileID: 997400813}
-  blueprintCraftPage: {fileID: 1399866944}
+  blueprintsContainer: {fileID: 0}
+  blueprintCategoryPrefab: {fileID: 0}
+  blueprintButtonPrefab: {fileID: 0}
+  blueprintRequiredItemPrefab: {fileID: 0}
+  blueprintRequiredItemsContainer: {fileID: 0}
+  blueprintCraftAmountInput: {fileID: 0}
+  noBlueprintSelectedPage: {fileID: 0}
+  blueprintCraftPage: {fileID: 0}
   itemsAvailableColor: {r: 1, g: 1, b: 1, a: 1}
   itemsNotAvailableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &256294860
@@ -7045,6 +6873,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &271867871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7387,7 +7216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 96, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &285896910
@@ -7439,14 +7268,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1168482004}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 879738202}
-    _icon: {fileID: 867375099}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &285896913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7827,13 +7656,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 867227358}
-    _icon: {fileID: 1285902660}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &298281062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7969,6 +7798,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &302524437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8402,9 +8232,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 0, y: 0}
-  m_ColumnsCount: 7
+  m_ColumnsCount: 5
 --- !u!1 &314424794
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,7 +9443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -10038,9 +9868,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmount: 1
   maxAmount: 999
-  _minButton: {fileID: 1674828822}
-  _plusButton: {fileID: 1577987206}
-  _inputField: {fileID: 1039608664}
+  _minButton: {fileID: 0}
+  _plusButton: {fileID: 0}
+  _inputField: {fileID: 0}
 --- !u!1 &391153453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10292,7 +10122,7 @@ MonoBehaviour:
   dragSpeed: 1
   onClickBringToForeground: 1
   onWindowShowBringToForeground: 1
-  maxForegroundIndex: 99
+  maxForegroundIndex: 10
 --- !u!114 &393776227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10308,7 +10138,7 @@ MonoBehaviour:
   dragSpeed: 1
   onClickBringToForeground: 1
   onWindowShowBringToForeground: 1
-  maxForegroundIndex: 99
+  maxForegroundIndex: 10
 --- !u!114 &393776228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10321,7 +10151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Confirmation dialog
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -10386,10 +10216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a088a2071fa653849b0e13beb0af2269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 1955490953}
-  descriptionText: {fileID: 1242503177}
-  yesButton: {fileID: 1948611255}
-  noButton: {fileID: 1599219902}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   disableSelectOnOpenDialogOnMobile: 1
   selectOnOpenDialog: {fileID: 0}
   positionOnTopOfCaller: 0
@@ -10529,7 +10359,7 @@ MonoBehaviour:
   dragSpeed: 1
   onClickBringToForeground: 1
   onWindowShowBringToForeground: 1
-  maxForegroundIndex: 99
+  maxForegroundIndex: 10
 --- !u!114 &399315159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10542,10 +10372,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Buy / Sell Dialog
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
-  blockUIInput: 1
+  blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
     motion: {fileID: 0}
@@ -10607,16 +10437,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c038e9a912a60874f876c060c7394208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 802846977}
-  descriptionText: {fileID: 69620088}
-  yesButton: {fileID: 573888557}
-  noButton: {fileID: 1738768113}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   disableSelectOnOpenDialogOnMobile: 1
   selectOnOpenDialog: {fileID: 0}
   positionOnTopOfCaller: 0
   disableElementsWhileActive: 1
   plusMinusAxis: 
-  inputField: {fileID: 1711906096}
+  inputField: {fileID: 0}
   valueVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -10630,10 +10460,10 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  amountControl: {fileID: 1608129240}
-  slot: {fileID: 2100320881}
-  price: {fileID: 1963990256}
-  affordableColor: {r: 1, g: 0.8482759, b: 0, a: 1}
+  amountControl: {fileID: 0}
+  slot: {fileID: 0}
+  price: {fileID: 0}
+  affordableColor: {r: 1, g: 1, b: 1, a: 1}
   unAffordableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &399315162
 MonoBehaviour:
@@ -10883,9 +10713,9 @@ RectTransform:
   m_Father: {fileID: 1303637197}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -104}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 240, y: 0}
   m_SizeDelta: {x: 480, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &408950579
@@ -11077,10 +10907,10 @@ RectTransform:
   m_Father: {fileID: 2092503499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: -10}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 96, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &410093425
 MonoBehaviour:
@@ -11132,13 +10962,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 118657414}
-    _icon: {fileID: 1201390441}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &410093428
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12282,6 +12112,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &461280419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12338,9 +12169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eacf65e124a854889af38bfb46924c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1666303401}
-  availableQuest: {fileID: 21300006, guid: dfe7a05d5f3fda04694b31ff866c5a56, type: 3}
-  completableQuest: {fileID: 21300004, guid: dfe7a05d5f3fda04694b31ff866c5a56, type: 3}
+  spriteRenderer: {fileID: 0}
+  availableQuest: {fileID: 0}
+  completableQuest: {fileID: 0}
 --- !u!114 &471765039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12352,8 +12183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66afe37f7601a046a0dbae5db237c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _quests:
-  - {fileID: 11400000, guid: a829d9bd82e73a14e816e10231b41871, type: 2}
+  _quests: []
 --- !u!1001 &474611286
 Prefab:
   m_ObjectHideFlags: 0
@@ -13163,23 +12993,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 0200000003000000
+  status: 
   onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1132751294}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestStatusBlockUI+OnAction, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisable:
@@ -13513,6 +13332,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &543215531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13525,7 +13345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 02000000
+  status: 
   onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
@@ -13657,8 +13477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 38488c1f5501fe04c9645db7c9e3bc9b, type: 2}
+  _equipmentTypes: []
 --- !u!114 &544960301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13699,12 +13518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 248056522}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1352517085}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -13827,7 +13646,7 @@ MonoBehaviour:
   dragSpeed: 1
   onClickBringToForeground: 1
   onWindowShowBringToForeground: 1
-  maxForegroundIndex: 99
+  maxForegroundIndex: 10
 --- !u!114 &547618314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13856,7 +13675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Number picker
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -13921,16 +13740,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef0bd7136c019a4d99a074a3801d247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 578434056}
-  descriptionText: {fileID: 907683922}
-  yesButton: {fileID: 2016961750}
-  noButton: {fileID: 2070744389}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   disableSelectOnOpenDialogOnMobile: 1
   selectOnOpenDialog: {fileID: 0}
   positionOnTopOfCaller: 0
   disableElementsWhileActive: 1
   plusMinusAxis: 
-  inputField: {fileID: 884204368}
+  inputField: {fileID: 0}
   valueVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -13944,7 +13763,7 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  amountControl: {fileID: 1160651439}
+  amountControl: {fileID: 0}
 --- !u!114 &547618318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14021,6 +13840,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -14036,6 +13856,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -14128,7 +13949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: InfoBox
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -14207,18 +14028,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8a7ef2f269a8e4882b6cbd1c50667b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 551410714}
-  uiIcon: {fileID: 1641679785}
-  uiName: {fileID: 881557280}
-  uiDescription: {fileID: 1195646764}
+  container: {fileID: 0}
+  uiIcon: {fileID: 0}
+  uiName: {fileID: 0}
+  uiDescription: {fileID: 0}
   collectionsToIgnore: []
   showWhenHoveringLootableObject: 1
   showWhenHoveringSlot: 1
   showWhenClickSlot: 1
   showHideWindow: 1
-  showOutOfRangeLootables: 1
+  showOutOfRangeLootables: 0
   positionAtMouse: 1
-  showForBestTrigger: 0
+  showForBestTrigger: 1
   showItemInfo: 1
   showUsageRequirements: 1
   overrideUsageRequirementString: 0
@@ -14228,10 +14049,10 @@ MonoBehaviour:
   usageRequirementHighEnoughColor: {r: 0, g: 1, b: 0, a: 1}
   moveWhenHitBorderHorizontal: 1
   moveWhenHitBorderVertical: 1
-  borderMargins: {x: -30, y: -30}
-  infoBoxCategory: {fileID: 177522, guid: 4d6f3fac16f7102498bd926be07d6ad2, type: 2}
-  separatorPrefab: {fileID: 165584, guid: e182e16e072842e4680af5c61cc7631c, type: 2}
-  infoBoxRowPrefab: {fileID: 11410406, guid: 9697dbc3fb3304e4c9cbd2fbec224c7b, type: 2}
+  borderMargins: {x: 0, y: 0}
+  infoBoxCategory: {fileID: 0}
+  separatorPrefab: {fileID: 0}
+  infoBoxRowPrefab: {fileID: 0}
 --- !u!114 &551410719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14392,14 +14213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1168482004}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 220380887}
-    _icon: {fileID: 461280419}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &552356461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14463,9 +14284,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 0, y: 0}
-  m_ColumnsCount: 6
+  m_ColumnsCount: 5
 --- !u!114 &553849246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14530,23 +14351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 00000000
+  status: 
   onlyShowWhenCompletable: 0
-  onlyShowWhenNotCompletable: 1
+  onlyShowWhenNotCompletable: 0
   onEnable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 21957060}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestStatusBlockUI+OnAction, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisable:
@@ -15117,36 +14927,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e20044bfd9396f4ebb0a3182a941990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: InventoryBags
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
+  canContainCurrencies: 1
   canDropFromCollection: 0
   canUseItemsFromReference: 0
-  canUseFromCollection: 1
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
-  canStackItemsInCollection: 0
-  canUnstackItemsInCollection: 0
-  manuallyDefineCollection: 1
-  container: {fileID: 333236447}
+  canStackItemsInCollection: 1
+  canUnstackItemsInCollection: 1
+  manuallyDefineCollection: 0
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
-    filters:
-    - restrictionType: 0
-      filterType: 0
-      categoryValue: {fileID: 0}
-      statDefinitionValue: {fileID: 0}
-      rarityValue: {fileID: 0}
-      stringValue: Devdog.InventoryPro.BagInventoryItem, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      boolValue: 0
-      floatValue: 0
+    filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
+  ignoreItemLayoutSizes: 0
   _initialCollectionSize: 4
-  _extendingCollection: {fileID: 1306470929}
+  _extendingCollection: {fileID: 0}
 --- !u!114 &594051762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15468,7 +15269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: InventoryWindow2
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -15642,39 +15443,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422de6a7f89131d44bcb7ad4052996ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Inventory2
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
-  canDropFromCollection: 1
-  canUseItemsFromReference: 1
-  canUseFromCollection: 1
+  canContainCurrencies: 1
+  canDropFromCollection: 0
+  canUseItemsFromReference: 0
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 312126874}
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
-    filters:
-    - restrictionType: 0
-      filterType: 0
-      categoryValue: {fileID: 0}
-      statDefinitionValue: {fileID: 0}
-      rarityValue: {fileID: 0}
-      stringValue: Devdog.InventoryPro.ConsumableInventoryItem, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      boolValue: 0
-      floatValue: 0
+    filters: []
     matchType: 0
   ignoreItemLayoutSizes: 0
-  sortButton: {fileID: 1957412947}
+  sortButton: {fileID: 0}
   scrollRect: {fileID: 0}
   isSharedCollection: 0
-  _collectionPriority: 60
-  _initialCollectionSize: 4
+  _collectionPriority: 0
+  _initialCollectionSize: 20
   useItemMoveToBank: 1
   useItemSell: 1
   swapItemAudioClip:
@@ -15683,12 +15475,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   sortAudioClip:
-    audioClip: {fileID: 8300000, guid: c9a12075f431bc442aae5ed1b9c041d9, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
   onAddItemAudioClip:
-    audioClip: {fileID: 8300000, guid: 2c8c4132c2b19be44a61c3505df8e34e, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
@@ -16093,10 +15885,10 @@ RectTransform:
   m_Father: {fileID: 2092503499}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 54, y: -10}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &625108492
 MonoBehaviour:
@@ -16148,13 +15940,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 802558199}
-    _icon: {fileID: 1020989959}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &625108495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17811,6 +17603,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &697340674
 GameObject:
   m_ObjectHideFlags: 0
@@ -17874,7 +17667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: CharacterWindow
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -17937,7 +17730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e3b2faea05d549ab06c6c4f4ad4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: 99
+  keyCode: 0
 --- !u!114 &697340679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17950,11 +17743,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba6e3a394db6a42822326df7ae7c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptShow: {fileID: 966293815}
-  denyShow: {fileID: 1581050801}
+  acceptShow: {fileID: 0}
+  denyShow: {fileID: 0}
   triggerWhenDroppedOnSlot: 0
-  collection: {fileID: 818166405}
-  window: {fileID: 697340676}
+  collection: {fileID: 0}
+  window: {fileID: 0}
 --- !u!225 &697340680
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18142,6 +17935,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -18157,6 +17951,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -18689,6 +18484,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &734784555
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19481,10 +19277,10 @@ RectTransform:
   m_Father: {fileID: 1340881910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 38, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &763853219
 MonoBehaviour:
@@ -19672,6 +19468,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &769453194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19949,14 +19746,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1238935652}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 501332681}
-    _icon: {fileID: 1344244426}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &773601457
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20021,6 +19818,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &775397587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20113,6 +19911,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &777138264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20442,9 +20241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94e56a01ae881a4ab03479f811a8f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: NoQuestSelected
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -20477,7 +20276,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Devdog.General.UI.UIWindow+UIWindowActionEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  isDefaultPage: 0
+  isDefaultPage: 1
   _isEnabled: 1
   myButton: {fileID: 0}
 --- !u!95 &786392623
@@ -20980,37 +20779,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfbe9ef49896794dbda9dee474fbfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Character
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
-  canDropFromCollection: 1
-  canUseItemsFromReference: 1
-  canUseFromCollection: 1
+  canContainCurrencies: 1
+  canDropFromCollection: 0
+  canUseItemsFromReference: 0
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
-  manuallyDefineCollection: 1
-  container: {fileID: 1435453067}
+  manuallyDefineCollection: 0
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
-    filters:
-    - restrictionType: 0
-      filterType: 0
-      categoryValue: {fileID: 0}
-      statDefinitionValue: {fileID: 0}
-      rarityValue: {fileID: 0}
-      stringValue: Devdog.InventoryPro.EquippableInventoryItem, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      boolValue: 0
-      floatValue: 0
-    matchType: 1
-  ignoreItemLayoutSizes: 1
-  _collectionPriority: 50
+    filters: []
+    matchType: 0
+  ignoreItemLayoutSizes: 0
+  _collectionPriority: 0
   isSharedCollection: 0
-  statsCollectionUI: {fileID: 1668489494}
+  statsCollectionUI: {fileID: 0}
 --- !u!114 &818166406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21023,50 +20813,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5aea79f4af4b6143a49743468121ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Skillbar
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
+  canContainCurrencies: 1
   canDropFromCollection: 0
-  canUseItemsFromReference: 1
-  canUseFromCollection: 1
+  canUseItemsFromReference: 0
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 1279009180}
-  itemButtonPrefab: {fileID: 143214, guid: 728b9fb4603667f48a8d60ca0cc191eb, type: 2}
+  container: {fileID: 0}
+  itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
-  keys:
-  - keyCombination: 31000000
-    name: 1
-  - keyCombination: 32000000
-    name: 2
-  - keyCombination: 33000000
-    name: 3
-  - keyCombination: 34000000
-    name: 4
-  - keyCombination: 35000000
-    name: 5
-  - keyCombination: 36000000
-    name: 6
-  - keyCombination: 37000000
-    name: 7
-  - keyCombination: 38000000
-    name: 8
-  - keyCombination: 39000000
-    name: 9
-  - keyCombination: 30000000
-    name: 0
-  - keyCombination: 2d000000
-    name: '-'
-  - keyCombination: 3d000000
-    name: =
+  ignoreItemLayoutSizes: 0
+  keys: []
   clearSlotWhenStackDepleted: 0
 --- !u!1 &823640480
 GameObject:
@@ -21122,12 +20888,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146ee562a0484eb47a7e52add94e4504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskProgressPrefab: {fileID: 11480520, guid: 8f95899e623d6b144af6b9a0b71d7e4d, type: 2}
-  questName: {fileID: 1501594763}
-  questDescription: {fileID: 1700925671}
+  taskProgressPrefab: {fileID: 0}
+  questName: {fileID: 0}
+  questDescription: {fileID: 0}
   questActivateConditions: {fileID: 0}
-  rewardsContainer: {fileID: 408950578}
-  tasksContainer: {fileID: 1179062910}
+  rewardsContainer: {fileID: 0}
+  tasksContainer: {fileID: 0}
   acceptButton: {fileID: 0}
   acceptCallback:
     m_PersistentCalls:
@@ -21164,9 +20930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94e56a01ae881a4ab03479f811a8f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: QuestDetails
-  hideOnStart: 0
-  resetPositionOnStart: 0
+  windowName: MyWindow
+  hideOnStart: 1
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -21288,10 +21054,10 @@ RectTransform:
   m_Father: {fileID: 1258114218}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -10}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &823973684
 MonoBehaviour:
@@ -21601,8 +21367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: a77b1715aea398041bf5790165c31980, type: 2}
+  _equipmentTypes: []
 --- !u!114 &841881984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21643,12 +21408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 1789770598}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 208518405}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -21758,23 +21523,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 01000000
+  status: 
   onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 744970520}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestStatusBlockUI+OnAction, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisable:
@@ -22480,6 +22234,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &867375099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23032,7 +22787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 38, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &879738201
@@ -23431,10 +23186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac02b5872deb51b42964d16f606ec7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stat: {fileID: 11400000, guid: f69140e8c450e2545a69bbc1f35ee6bf, type: 2}
+  _stat: {fileID: 0}
   useCurrentPlayer: 1
   player: {fileID: 0}
-  useValueInterpolation: 1
+  useValueInterpolation: 0
   interpolationCurve:
     serializedVersion: 2
     m_Curve:
@@ -23456,11 +23211,11 @@ MonoBehaviour:
   interpolationSpeed: 1
   statName: {fileID: 0}
   visualizer:
-    textField: {fileID: 34330854}
+    textField: {fileID: 0}
     textFormat: '{0}/{1}'
-    roundToDecimals: 0
-    clearTextWhenZero: 0
-    slider: {fileID: 347748431}
+    roundToDecimals: 1
+    clearTextWhenZero: 1
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -23594,6 +23349,7 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -23609,6 +23365,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -23647,7 +23404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c9af6c527bd1b4ba5b309d730965c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: ExplorationInteriorSandbox
+  SceneToLoad: 
 --- !u!1 &898319070
 GameObject:
   m_ObjectHideFlags: 0
@@ -23764,8 +23521,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 240, y: 0}
+  m_SizeDelta: {x: 480, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &898465138
 MonoBehaviour:
@@ -23823,6 +23580,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &902425336
 GameObject:
   m_ObjectHideFlags: 0
@@ -24117,9 +23875,9 @@ RectTransform:
   m_Father: {fileID: 1670184494}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: -28}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 160, y: 0}
   m_SizeDelta: {x: 320, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &903595191
@@ -24141,6 +23899,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &903595192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24445,8 +24204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 51013ff9f4c5edc4cb1b16a2848bc538, type: 2}
+  _equipmentTypes: []
 --- !u!114 &917191063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24487,12 +24245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 385803819}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1211765583}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -25048,6 +24806,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &947418914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25159,9 +24918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Dragaccept
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -25871,10 +25630,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac02b5872deb51b42964d16f606ec7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stat: {fileID: 11400000, guid: 35b7989dbd36e86409b8d8d56801109c, type: 2}
+  _stat: {fileID: 0}
   useCurrentPlayer: 1
   player: {fileID: 0}
-  useValueInterpolation: 1
+  useValueInterpolation: 0
   interpolationCurve:
     serializedVersion: 2
     m_Curve:
@@ -25896,11 +25655,11 @@ MonoBehaviour:
   interpolationSpeed: 1
   statName: {fileID: 0}
   visualizer:
-    textField: {fileID: 1429603379}
+    textField: {fileID: 0}
     textFormat: '{0}/{1}'
-    roundToDecimals: 0
-    clearTextWhenZero: 0
-    slider: {fileID: 571759091}
+    roundToDecimals: 1
+    clearTextWhenZero: 1
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -26377,7 +26136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: QuestWindow
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -26425,8 +26184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 1
-  onClickBringToForeground: 0
-  onWindowShowBringToForeground: 0
+  onClickBringToForeground: 1
+  onWindowShowBringToForeground: 1
   maxForegroundIndex: 10
 --- !u!114 &996823087
 MonoBehaviour:
@@ -26440,78 +26199,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146ee562a0484eb47a7e52add94e4504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskProgressPrefab: {fileID: 11480520, guid: 8f95899e623d6b144af6b9a0b71d7e4d, type: 2}
-  questName: {fileID: 980150573}
+  taskProgressPrefab: {fileID: 0}
+  questName: {fileID: 0}
   questDescription: {fileID: 0}
-  questActivateConditions: {fileID: 1059219830}
-  rewardsContainer: {fileID: 1511368291}
-  tasksContainer: {fileID: 903595190}
-  acceptButton: {fileID: 1132751294}
+  questActivateConditions: {fileID: 0}
+  rewardsContainer: {fileID: 0}
+  tasksContainer: {fileID: 0}
+  acceptButton: {fileID: 0}
   acceptCallback:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 996823085}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestWindowUI+OnQuestActionCallback, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  declineButton: {fileID: 786390385}
+  declineButton: {fileID: 0}
   declineCallback:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 996823085}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestWindowUI+OnQuestActionCallback, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  cancelButton: {fileID: 1574640886}
+  cancelButton: {fileID: 0}
   cancelCallback:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 996823085}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestWindowUI+OnQuestActionCallback, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  completeButton: {fileID: 1180897535}
+  completeButton: {fileID: 0}
   completeCallback:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 996823085}
-        m_MethodName: Hide
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.4
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestWindowUI+OnQuestActionCallback, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!95 &996823088
@@ -26620,7 +26335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -26885,9 +26600,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmount: 1
   maxAmount: 999
-  _minButton: {fileID: 1529831481}
-  _plusButton: {fileID: 174437636}
-  _inputField: {fileID: 1705404364}
+  _minButton: {fileID: 0}
+  _plusButton: {fileID: 0}
+  _inputField: {fileID: 0}
 --- !u!1001 &1003819629
 Prefab:
   m_ObjectHideFlags: 0
@@ -27062,8 +26777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: dd85d3bd06aae894a965cf0fa5c043d2, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1008993673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27104,12 +26818,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 1196539178}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 440032272}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -27331,6 +27045,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -27346,6 +27061,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -27574,6 +27290,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1020989959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27854,7 +27571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!114 &1032861883
@@ -28260,6 +27977,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1045868915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28391,7 +28109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dc036f56a51e54fb9fa4fca915344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Vendor buy back
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
@@ -28399,18 +28117,18 @@ MonoBehaviour:
   canDropFromCollection: 0
   canUseItemsFromReference: 0
   canUseFromCollection: 0
-  canDragInCollection: 0
-  canPutItemsInCollection: 0
-  canStackItemsInCollection: 0
+  canDragInCollection: 1
+  canPutItemsInCollection: 1
+  canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 1032861882}
-  itemButtonPrefab: {fileID: 143214, guid: 3c4882e195af7f84d879cb88bf1018e9, type: 2}
+  container: {fileID: 0}
+  itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
-  vendorUI: {fileID: 1123697031}
+  ignoreItemLayoutSizes: 0
+  vendorUI: {fileID: 0}
   _initialCollectionSize: 10
 --- !u!225 &1046857280
 CanvasGroup:
@@ -28489,9 +28207,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Devdog.General.UI.UIWindow+UIWindowActionEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  isDefaultPage: 0
+  isDefaultPage: 1
   _isEnabled: 1
-  myButton: {fileID: 1926296586}
+  myButton: {fileID: 0}
 --- !u!1 &1049820491
 GameObject:
   m_ObjectHideFlags: 0
@@ -28955,7 +28673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 0200000003000000
+  status: 
   onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
@@ -29510,8 +29228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfafc00ca4ad084a80a7d7b9193923f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrapperPrefab: {fileID: 11430698, guid: b86dac6367df4cd409afb249518736d2, type: 2}
-  slideAnimation: {fileID: 7400000, guid: 9ecde8ac5016d184fbfe30f3041b9d91, type: 2}
+  wrapperPrefab: {fileID: 0}
+  slideAnimation: {fileID: 0}
   offsetTimerSeconds: 0.2
 --- !u!1 &1094567923
 GameObject:
@@ -29817,7 +29535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e3b2faea05d549ab06c6c4f4ad4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: 27
+  keyCode: 0
 --- !u!225 &1110089316
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -29842,7 +29560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe4efee90d4a7d49b660f36de3ece3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideSingleWindowAtATime: 0
+  hideSingleWindowAtATime: 1
   restoreWindowsAfterClose: 1
 --- !u!114 &1110089318
 MonoBehaviour:
@@ -29856,7 +29574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Settings
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -30167,34 +29885,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0a17c802d406e4181d4fe29e307eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Vendor
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
+  canContainCurrencies: 1
   canDropFromCollection: 0
   canUseItemsFromReference: 0
   canUseFromCollection: 0
-  canDragInCollection: 0
+  canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 1304425269}
-  itemButtonPrefab: {fileID: 143214, guid: 3c4882e195af7f84d879cb88bf1018e9, type: 2}
+  container: {fileID: 0}
+  itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
-  buyBackCollection: {fileID: 1046857279}
-  vendorNameText: {fileID: 1798796357}
+  ignoreItemLayoutSizes: 0
+  buyBackCollection: {fileID: 0}
+  vendorNameText: {fileID: 0}
   audioWhenSoldItemToVendor:
-    audioClip: {fileID: 8300000, guid: 472841d2c899e914a94000d7779dc722, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
   audioWhenBoughtItemFromVendor:
-    audioClip: {fileID: 8300000, guid: 472841d2c899e914a94000d7779dc722, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
@@ -30211,7 +29929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Vendor
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -30274,11 +29992,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba6e3a394db6a42822326df7ae7c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptShow: {fileID: 2101588542}
-  denyShow: {fileID: 1305066030}
+  acceptShow: {fileID: 0}
+  denyShow: {fileID: 0}
   triggerWhenDroppedOnSlot: 0
-  collection: {fileID: 1123697031}
-  window: {fileID: 1123697032}
+  collection: {fileID: 0}
+  window: {fileID: 0}
 --- !u!225 &1123697035
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -30979,8 +30697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 87f3122f9a5414b42b63e2491fed11f6, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1143069492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31021,12 +30738,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 856808744}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 724111475}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -31196,9 +30913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 753641156}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1154356497}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -31391,9 +31108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmount: 1
   maxAmount: 999
-  _minButton: {fileID: 2094998807}
-  _plusButton: {fileID: 993783641}
-  _inputField: {fileID: 884204368}
+  _minButton: {fileID: 0}
+  _plusButton: {fileID: 0}
+  _inputField: {fileID: 0}
 --- !u!1 &1161175648
 GameObject:
   m_ObjectHideFlags: 0
@@ -31446,10 +31163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac02b5872deb51b42964d16f606ec7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stat: {fileID: 11400000, guid: e9b9e4d122654294499b7916e5dab036, type: 2}
+  _stat: {fileID: 0}
   useCurrentPlayer: 1
   player: {fileID: 0}
-  useValueInterpolation: 1
+  useValueInterpolation: 0
   interpolationCurve:
     serializedVersion: 2
     m_Curve:
@@ -31471,11 +31188,11 @@ MonoBehaviour:
   interpolationSpeed: 1
   statName: {fileID: 0}
   visualizer:
-    textField: {fileID: 1786654763}
+    textField: {fileID: 0}
     textFormat: '{0}/{1}'
-    roundToDecimals: 0
-    clearTextWhenZero: 0
-    slider: {fileID: 1208114727}
+    roundToDecimals: 1
+    clearTextWhenZero: 1
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -31647,27 +31364,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e9b4ec5bbcceb4fa22387d6ffb07f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Bank
+  collectionName: MyCollection
   restrictByWeight: 0
-  restrictMaxWeight: 41
+  restrictMaxWeight: 100
   _useReferences: 0
   canContainCurrencies: 1
-  canDropFromCollection: 1
+  canDropFromCollection: 0
   canUseItemsFromReference: 0
-  canUseFromCollection: 1
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 216402679}
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
   ignoreItemLayoutSizes: 0
-  sortButton: {fileID: 1066938793}
-  _initialCollectionSize: 70
+  sortButton: {fileID: 0}
+  _initialCollectionSize: 80
   useMoveToInventory: 1
   swapItemAudioClip:
     audioClip: {fileID: 0}
@@ -31675,12 +31392,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   sortAudioClip:
-    audioClip: {fileID: 8300000, guid: c9a12075f431bc442aae5ed1b9c041d9, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
   onAddItemAudioClip:
-    audioClip: {fileID: 8300000, guid: 2c8c4132c2b19be44a61c3505df8e34e, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
@@ -31696,7 +31413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Bank
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -32074,8 +31791,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 240, y: 0}
+  m_SizeDelta: {x: 480, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1179062911
 MonoBehaviour:
@@ -32096,6 +31813,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1179062912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32656,16 +32374,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba3f23ca608af14a91eddf7f944f9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noticeRowPrefab: {fileID: 11407554, guid: 4511a32cb4902a74186204cbead892c7, type: 2}
-  container: {fileID: 1663918881}
-  scrollRect: {fileID: 1904348390}
+  noticeRowPrefab: {fileID: 0}
+  container: {fileID: 0}
+  scrollRect: {fileID: 0}
   onNewMessageAudioClip:
-    audioClip: {fileID: 8300000, guid: bcd76ef5145a8ae49b077824a78a9c99, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
-  maxMessages: 10
-  destroyAfterShowTime: 0
+  maxMessages: 50
+  destroyAfterShowTime: 1
   showTimeFactor: 1
 --- !u!1 &1186972162
 GameObject:
@@ -33330,6 +33048,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1201390441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34038,6 +33757,7 @@ MonoBehaviour:
   m_PreferredHeight: 23
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &1223942331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34136,13 +33856,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 453290856}
-    _icon: {fileID: 775397587}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1224659731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34416,8 +34136,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 249690371}
   m_HandleRect: {fileID: 249690370}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -34562,6 +34282,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1232754905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34722,7 +34443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158d816c85aa00343a58a728c2fc3edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Loot window
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
@@ -34730,17 +34451,17 @@ MonoBehaviour:
   canDropFromCollection: 0
   canUseItemsFromReference: 0
   canUseFromCollection: 0
-  canDragInCollection: 0
-  canPutItemsInCollection: 0
+  canDragInCollection: 1
+  canPutItemsInCollection: 1
   canStackItemsInCollection: 1
-  canUnstackItemsInCollection: 0
+  canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 410021521}
-  itemButtonPrefab: {fileID: 143214, guid: 14477a7cfb5caec4290d85af59908307, type: 2}
+  container: {fileID: 0}
+  itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
+  ignoreItemLayoutSizes: 0
   removeEmptySlots: 1
 --- !u!114 &1238935653
 MonoBehaviour:
@@ -34754,7 +34475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Loot
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -35336,8 +35057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 9e81881ca2b7fdc4b9fc2bed0872bafc, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1252190234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35378,12 +35098,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 2022261248}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 447451597}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -35589,10 +35309,10 @@ RectTransform:
   m_Father: {fileID: 2092503499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 0, y: 20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1258114219
 MonoBehaviour:
@@ -35644,13 +35364,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 823973685}
-    _icon: {fileID: 777138264}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1258114222
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36112,6 +35832,7 @@ MonoBehaviour:
   m_PreferredHeight: 50
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1273787025
 GameObject:
   m_ObjectHideFlags: 0
@@ -36429,6 +36150,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1285902660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36742,13 +36464,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1634038584}
-    _icon: {fileID: 1232754905}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1297543916
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36867,8 +36589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 240, y: 0}
+  m_SizeDelta: {x: 480, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1303637198
 MonoBehaviour:
@@ -37076,7 +36798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!114 &1304425270
@@ -37217,9 +36939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: DragDeny
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -37310,7 +37032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Inventory
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -37357,8 +37079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d916069d786435d44b875e067660eac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherWindows:
-  - {fileID: 610631265}
+  otherWindows: []
   showWhenShown: 1
   hideWhenHidden: 1
 --- !u!114 &1306470922
@@ -37389,7 +37110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e3b2faea05d549ab06c6c4f4ad4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: 105
+  keyCode: 0
 --- !u!114 &1306470924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37402,9 +37123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb895652e04fd8a4aa1ac1c330c4c7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - item: {fileID: 114404424827748388, guid: a2a0eea742f3a6c48bdfa93b334805bf, type: 2}
-    amount: 1
+  items: []
   useForceSet: 0
 --- !u!114 &1306470925
 MonoBehaviour:
@@ -37421,7 +37140,7 @@ MonoBehaviour:
   weightText: {fileID: 495142869}
   format: '{0}/{1}kg'
   roundAmount: 1
-  collection: {fileID: 1306470929}
+  collection: {fileID: 0}
 --- !u!225 &1306470926
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -37545,30 +37264,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422de6a7f89131d44bcb7ad4052996ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: Inventory
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
   canContainCurrencies: 1
-  canDropFromCollection: 1
-  canUseItemsFromReference: 1
-  canUseFromCollection: 1
+  canDropFromCollection: 0
+  canUseItemsFromReference: 0
+  canUseFromCollection: 0
   canDragInCollection: 1
   canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 553849244}
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
   ignoreItemLayoutSizes: 0
-  sortButton: {fileID: 1795092720}
-  scrollRect: {fileID: 1478954260}
+  sortButton: {fileID: 0}
+  scrollRect: {fileID: 0}
   isSharedCollection: 0
-  _collectionPriority: 50
-  _initialCollectionSize: 30
+  _collectionPriority: 0
+  _initialCollectionSize: 20
   useItemMoveToBank: 1
   useItemSell: 1
   swapItemAudioClip:
@@ -37577,12 +37296,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   sortAudioClip:
-    audioClip: {fileID: 8300000, guid: c9a12075f431bc442aae5ed1b9c041d9, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
   onAddItemAudioClip:
-    audioClip: {fileID: 8300000, guid: 2c8c4132c2b19be44a61c3505df8e34e, type: 3}
+    audioClip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
@@ -37985,8 +37704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 9e81881ca2b7fdc4b9fc2bed0872bafc, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1324161716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38027,12 +37745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 1831735954}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 214577038}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -38218,6 +37936,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1326057406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38344,13 +38063,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1657810451}
-    _icon: {fileID: 1555168943}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1326703823
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38605,26 +38324,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b675ec43b28b3342b6c90e62633cb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: CraftingRewardsUI
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
-  canDropFromCollection: 1
+  canContainCurrencies: 1
+  canDropFromCollection: 0
   canUseItemsFromReference: 0
   canUseFromCollection: 0
   canDragInCollection: 1
-  canPutItemsInCollection: 0
+  canPutItemsInCollection: 1
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 1334967069}
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
-  _initialCollectionSize: 9
+  ignoreItemLayoutSizes: 0
+  _initialCollectionSize: 0
 --- !u!114 &1334967071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38788,7 +38507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1340881911
@@ -38840,14 +38559,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1168482004}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 763853220}
-    _icon: {fileID: 1691089990}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1340881914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39022,6 +38741,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1344244426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39106,23 +38826,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 00000000
-  onlyShowWhenCompletable: 1
+  status: 
+  onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1180897535}
-        m_MethodName: Select
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Devdog.QuestSystemPro.UI.QuestStatusBlockUI+OnAction, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onDisable:
@@ -39428,7 +39137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Context menu
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -39507,10 +39216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79718798dd92c446b6b9c083625b33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 1354590457}
-  contextMenuItemPrefab: {fileID: 11498040, guid: 1a8c6b45d6ac5c84594ae397e9f6af04,
-    type: 2}
-  autoTriggerIfSingleAction: 0
+  container: {fileID: 0}
+  contextMenuItemPrefab: {fileID: 0}
+  autoTriggerIfSingleAction: 1
   closeWindowWhenClickedOutside: 1
   positionAtMouse: 1
 --- !u!114 &1354590462
@@ -40232,7 +39940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -40265,7 +39973,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Devdog.General.UI.UIWindow+UIWindowActionEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  isDefaultPage: 0
+  isDefaultPage: 1
   _isEnabled: 1
   myButton: {fileID: 0}
 --- !u!95 &1399866945
@@ -40423,10 +40131,10 @@ RectTransform:
   m_Father: {fileID: 1540491180}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 54, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 54, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1410256350
 MonoBehaviour:
@@ -40477,14 +40185,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1306470929}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1853620393}
-    _icon: {fileID: 1634729653}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1410256353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40616,11 +40324,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!114 &1421981739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40636,6 +40344,7 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 4294967291
+  m_MaxRayIntersections: 0
 --- !u!1 &1422489531
 GameObject:
   m_ObjectHideFlags: 0
@@ -41359,11 +41068,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!1 &1441668106
 GameObject:
   m_ObjectHideFlags: 0
@@ -41487,10 +41196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4de0a813eeec114eb222dcf66fdc4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyID: 3
+  currencyID: 0
   allowCurrencyConversions: 1
-  toCollection: {fileID: 1168482004}
-  button: {fileID: 1441808730}
+  toCollection: {fileID: 0}
+  button: {fileID: 0}
 --- !u!114 &1441808730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41722,6 +41431,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &1449877004
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41792,7 +41502,7 @@ MonoBehaviour:
   dragSpeed: 1
   onClickBringToForeground: 1
   onWindowShowBringToForeground: 1
-  maxForegroundIndex: 99
+  maxForegroundIndex: 10
 --- !u!114 &1450789664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41805,10 +41515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Item number picker
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
-  blockUIInput: 1
+  blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
     motion: {fileID: 0}
@@ -41870,16 +41580,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70d30a89e34ddf46ac85a9ecf5fac2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 631397375}
-  descriptionText: {fileID: 602055794}
-  yesButton: {fileID: 1187244095}
-  noButton: {fileID: 176602525}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   disableSelectOnOpenDialogOnMobile: 1
-  selectOnOpenDialog: {fileID: 1039608664}
+  selectOnOpenDialog: {fileID: 0}
   positionOnTopOfCaller: 0
   disableElementsWhileActive: 1
   plusMinusAxis: 
-  inputField: {fileID: 1039608664}
+  inputField: {fileID: 0}
   valueVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -41893,8 +41603,8 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  amountControl: {fileID: 388039608}
-  slot: {fileID: 1904492820}
+  amountControl: {fileID: 0}
+  slot: {fileID: 0}
 --- !u!114 &1450789667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42098,14 +41808,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1238935652}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1097367914}
-    _icon: {fileID: 1326057406}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1455811771
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42528,6 +42238,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: 1
+  m_LayoutPriority: 1
 --- !u!1 &1478954259
 GameObject:
   m_ObjectHideFlags: 0
@@ -42829,9 +42540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 902425339}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1483321319}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -44669,6 +44380,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1555168943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45115,9 +44827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: DragDeny
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -45303,6 +45015,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1586702523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45713,6 +45426,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114251869310089662, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: _databases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4665840768889062, guid: d017e37b82a8e744389778b91401e9be, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -45760,6 +45478,36 @@ Prefab:
       propertyPath: _defaultDatabase
       value: 
       objectReference: {fileID: 11400000, guid: c8c89a1615cf1374bb767555c5eea4f1,
+        type: 2}
+    - target: {fileID: 114820032524352480, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: languageDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 883cb64e0f1174f40b669db1c6ff84d8,
+        type: 2}
+    - target: {fileID: 114820032524352480, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: settingsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 6998f891ad817074e9b414c7d77db3ce,
+        type: 2}
+    - target: {fileID: 114820032524352480, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: questDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 07fadc1207ef96e4bb80135e2efd2b19,
+        type: 2}
+    - target: {fileID: 114195846557711750, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 184c924e1f2b7844a8b391c0e20f2f2e,
+        type: 2}
+    - target: {fileID: 114251869310089662, guid: d017e37b82a8e744389778b91401e9be,
+        type: 2}
+      propertyPath: _databases.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ab7377fa46e87f4fac594b5b7c99ad9,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d017e37b82a8e744389778b91401e9be, type: 2}
@@ -45835,7 +45583,7 @@ MonoBehaviour:
   craftingLayout: {fileID: 0}
   contextMenu: {fileID: 0}
   _uiCamera: {fileID: 0}
-  uiRoot: {fileID: 646489092}
+  uiRoot: {fileID: 506854536}
   confirmationDialog: {fileID: 0}
   buySellDialog: {fileID: 0}
   intValDialog: {fileID: 0}
@@ -45852,7 +45600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5626d6fa89eaa4448a9b06f15a72bcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 2560de15492a3344b8921df7a2efff64, type: 2}
+  _settings: {fileID: 11400000, guid: 5bc7e835d3e407143825cf04f5f2a542, type: 2}
 --- !u!114 &1599746180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45869,9 +45617,7 @@ MonoBehaviour:
     KeysList: []
     InspectorWasUpdated: 0
     UpdateInspectorValues: 0
-    CustomLabels:
-    - SettingToLoad
-    - Value
+    CustomLabels: []
     EditingLabel: 0
     LabelNum: 0
 --- !u!114 &1599746181
@@ -45900,7 +45646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultDatabase: {fileID: 11400000, guid: c8c89a1615cf1374bb767555c5eea4f1, type: 2}
   _databases:
-  - {fileID: 11400000, guid: c8c89a1615cf1374bb767555c5eea4f1, type: 2}
+  - {fileID: 11400000, guid: 5ab7377fa46e87f4fac594b5b7c99ad9, type: 2}
 --- !u!114 &1599746183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46046,9 +45792,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmount: 1
   maxAmount: 999
-  _minButton: {fileID: 638417746}
-  _plusButton: {fileID: 1130132093}
-  _inputField: {fileID: 1711906096}
+  _minButton: {fileID: 0}
+  _plusButton: {fileID: 0}
+  _inputField: {fileID: 0}
 --- !u!1001 &1612825525
 Prefab:
   m_ObjectHideFlags: 0
@@ -46155,19 +45901,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 1, g: 1, b: 1, a: 1}
-  completedColor: {r: 1, g: 1, b: 1, a: 0.54901963}
-  inActiveColor: {r: 1, g: 1, b: 1, a: 0.54901963}
+  completedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inActiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   hideProgressWhenCompleted: 1
   hideProgressWhenInActive: 1
   taskName: {fileID: 0}
   taskDescription: {fileID: 0}
   taskIcon: {fileID: 0}
-  statusMessage: {fileID: 855364429}
+  statusMessage: {fileID: 0}
   progress:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
-    roundToDecimals: 3
-    clearTextWhenZero: 0
+    roundToDecimals: 1
+    clearTextWhenZero: 1
     slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
@@ -46178,7 +45924,7 @@ MonoBehaviour:
     clearTextWhenZero: 1
     slider: {fileID: 0}
     hideSliderWhenZero: 0
-    imageFill: {fileID: 1206584940}
+    imageFill: {fileID: 0}
   interpSpeed: 1
   interpCurve:
     serializedVersion: 2
@@ -46217,6 +45963,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1628904691
 GameObject:
   m_ObjectHideFlags: 0
@@ -46584,6 +46331,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1634729653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46673,9 +46421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30fa5a8553dbe748825e5f87d7b08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 239527679}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 1641679785}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -47159,6 +46907,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -47174,6 +46923,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -47190,6 +46940,8 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!114 &1666303402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47329,11 +47081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b34325eb8276274692bd8bf6c0b21e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 1668489493}
-  defaultStatusRowPrefab: {fileID: 11438680, guid: daab7375d65094f419fbf9574c539450,
-    type: 2}
-  statusCategoryPrefab: {fileID: 11438680, guid: 6f38281e4f3e37145a86cd37b78a2c9e,
-    type: 2}
+  container: {fileID: 0}
+  defaultStatusRowPrefab: {fileID: 0}
+  statusCategoryPrefab: {fileID: 0}
 --- !u!114 &1668489495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47438,8 +47188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 160, y: 0}
+  m_SizeDelta: {x: 320, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1670184495
 MonoBehaviour:
@@ -47497,6 +47247,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1673326389
 GameObject:
   m_ObjectHideFlags: 0
@@ -47908,14 +47659,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1238935652}
-  _currency: {fileID: 11400000, guid: 1887d22d2067e8942a60ce961b3c76cf, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 2130081968}
-    _icon: {fileID: 2064690608}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1681414832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48098,6 +47849,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1691089990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48849,6 +48601,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1737796937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49567,10 +49320,10 @@ RectTransform:
   m_Father: {fileID: 2039498089}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -12.65}
-  m_SizeDelta: {x: 0, y: 25.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1768155646
 MonoBehaviour:
@@ -50436,7 +50189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -50469,7 +50222,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Devdog.General.UI.UIWindow+UIWindowActionEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  isDefaultPage: 0
+  isDefaultPage: 1
   _isEnabled: 1
   myButton: {fileID: 0}
 --- !u!95 &1791365914
@@ -50547,12 +50300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b675ec43b28b3342b6c90e62633cb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectionName: CraftingItemsUI
+  collectionName: MyCollection
   restrictByWeight: 0
   restrictMaxWeight: 100
   _useReferences: 0
-  canContainCurrencies: 0
-  canDropFromCollection: 1
+  canContainCurrencies: 1
+  canDropFromCollection: 0
   canUseItemsFromReference: 0
   canUseFromCollection: 0
   canDragInCollection: 1
@@ -50560,13 +50313,13 @@ MonoBehaviour:
   canStackItemsInCollection: 1
   canUnstackItemsInCollection: 1
   manuallyDefineCollection: 0
-  container: {fileID: 1794410466}
+  container: {fileID: 0}
   itemButtonPrefab: {fileID: 0}
   filters:
     filters: []
     matchType: 0
-  ignoreItemLayoutSizes: 1
-  _initialCollectionSize: 9
+  ignoreItemLayoutSizes: 0
+  _initialCollectionSize: 0
 --- !u!114 &1794410468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51192,8 +50945,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1021710790}
   m_HandleRect: {fileID: 1021710788}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -51483,9 +51236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: Selected Object info
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -51567,11 +51320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3092147f46cb6734db0b05bf3565371c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectName: {fileID: 1586702523}
-  _objectHealthSlider: {fileID: 1349588164}
-  _healthContainer: {fileID: 1273787026}
-  _objectHealth: {fileID: 1667896649}
-  _maxObjectHealth: {fileID: 986789325}
+  _objectName: {fileID: 0}
+  _objectHealthSlider: {fileID: 0}
+  _healthContainer: {fileID: 0}
+  _objectHealth: {fileID: 0}
+  _maxObjectHealth: {fileID: 0}
 --- !u!95 &1835064838
 Animator:
   serializedVersion: 3
@@ -52479,9 +52232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmount: 1
   maxAmount: 999
-  _minButton: {fileID: 97648959}
-  _plusButton: {fileID: 1539673992}
-  _inputField: {fileID: 1836579844}
+  _minButton: {fileID: 0}
+  _plusButton: {fileID: 0}
+  _inputField: {fileID: 0}
 --- !u!1001 &1860930625
 Prefab:
   m_ObjectHideFlags: 0
@@ -52734,9 +52487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: AchievementTaskProgressUI
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -52893,22 +52646,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiModel:
-    icon: {fileID: 1744896317}
-    ownerName: {fileID: 898319072}
-    description: {fileID: 432272517}
-    statusMessage: {fileID: 1956558971}
+    icon: {fileID: 0}
+    ownerName: {fileID: 0}
+    description: {fileID: 0}
+    statusMessage: {fileID: 0}
     progress:
-      textField: {fileID: 1583200465}
+      textField: {fileID: 0}
       textFormat: '{0}/{1}'
-      roundToDecimals: 2
-      clearTextWhenZero: 0
-      slider: {fileID: 1892004440}
+      roundToDecimals: 1
+      clearTextWhenZero: 1
+      slider: {fileID: 0}
       hideSliderWhenZero: 0
       imageFill: {fileID: 0}
   showOverAchievement: 0
   hideAfterSeconds: 1
-  showForSeconds: 2
-  interpSpeed: 0.5
+  showForSeconds: 5
+  interpSpeed: 1
   interpCurve:
     serializedVersion: 2
     m_Curve:
@@ -52985,12 +52738,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
-  m_JumpPower: 8
+  m_JumpPower: 12
   m_GravityMultiplier: 2
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.3
+  m_GroundCheckDistance: 0.1
 --- !u!136 &1875053861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53035,9 +52788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useInterpolation: 0
   interpolationTime: 0.5
-  focusNames:
-  - Face1
-  - Face2
+  focusNames: []
 --- !u!114 &1875053864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53050,7 +52801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7053bfe59ceae9d4ab01f9998aaa2dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCamera: {fileID: 2105635889}
+  dialogueCamera: {fileID: 0}
 --- !u!114 &1875053865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53093,10 +52844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be11717ae404fb48aae52a1f9baeaaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterUI: {fileID: 818166405}
-  _inventoryCollections:
-  - {fileID: 1306470929}
-  _skillbarCollection: {fileID: 818166406}
+  _characterUI: {fileID: 0}
+  _inventoryCollections: []
+  _skillbarCollection: {fileID: 0}
   dynamicallyFindUIElements: 0
   characterCollectionName: Character
   inventoryCollectionNames:
@@ -53106,7 +52856,7 @@ MonoBehaviour:
   isPlayerDynamicallyInstantiated: 0
   dontDestroyOnLoad: 1
   _deathDropObjectPrefab: {fileID: 0}
-  _equipmentHandler: {fileID: 11400000, guid: f01b3147a06951d48b965a228bee3001, type: 2}
+  _equipmentHandler: {fileID: 0}
   _waitFramesBeforeInit: 0
 --- !u!1 &1885993957
 GameObject:
@@ -53530,6 +53280,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1900755081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53769,6 +53520,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1904492820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53781,9 +53533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30fa5a8553dbe748825e5f87d7b08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 327694242}
-  itemName: {fileID: 334073559}
-  icon: {fileID: 1856492484}
+  amountText: {fileID: 0}
+  itemName: {fileID: 0}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -53878,6 +53630,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1906836415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54039,6 +53792,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &1909480199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54314,6 +54068,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -54329,6 +54084,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -54593,8 +54349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 127c7cc5e386f5745aaa0987865701eb, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1933861805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54635,12 +54390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 917567403}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 146628538}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -54917,13 +54672,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collection: {fileID: 0}
-  _currency: {fileID: 11400000, guid: 0e17a9dfe570a1b40b7737b60fab21e4, type: 2}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 603027666}
-    _icon: {fileID: 87044872}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &1948019705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55288,11 +55043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: ab6419ad6d9f91a498b1644e7335145c, type: 2}
-  - {fileID: 11400000, guid: 9a25e1df6d056284f87b4206b9d97e64, type: 2}
-  - {fileID: 11400000, guid: 217d349f8db10d74295be99a4a2a25fb, type: 2}
-  - {fileID: 11400000, guid: 343f0a3937e8d1948bb7c68da1e7fff6, type: 2}
+  _equipmentTypes: []
 --- !u!114 &1956677339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55333,12 +55084,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 32625590}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 678354067}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}
@@ -55520,8 +55271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 1
-  onClickBringToForeground: 0
-  onWindowShowBringToForeground: 0
+  onClickBringToForeground: 1
+  onWindowShowBringToForeground: 1
   maxForegroundIndex: 10
 --- !u!114 &1957193479
 MonoBehaviour:
@@ -55535,15 +55286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ae39b223903254fae09e91db107bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questDetailsWindow: {fileID: 823640482}
-  questButtonContainer: {fileID: 1291587939}
-  noQuestSelected: {fileID: 786392622}
+  questDetailsWindow: {fileID: 0}
+  questButtonContainer: {fileID: 0}
+  noQuestSelected: {fileID: 0}
   focusFirstQuestOnShow: 1
-  showWindowOnAcceptedQuest: 0
-  showWindowOnQuestEnded: 0
-  questSidebarUI: {fileID: 2071660120}
-  questButtonUIPrefab: {fileID: 11419318, guid: 8417af42ac0ba044b8cfd745ebdcf07c,
-    type: 2}
+  showWindowOnAcceptedQuest: 1
+  showWindowOnQuestEnded: 1
+  questSidebarUI: {fileID: 0}
+  questButtonUIPrefab: {fileID: 0}
 --- !u!114 &1957193480
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -55556,7 +55306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e3b2faea05d549ab06c6c4f4ad4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: 113
+  keyCode: 0
 --- !u!95 &1957193481
 Animator:
   serializedVersion: 3
@@ -56177,7 +55927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: CraftingLayout
+  windowName: MyWindow
   hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
@@ -56270,7 +56020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e3b2faea05d549ab06c6c4f4ad4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: 114
+  keyCode: 0
 --- !u!82 &1979815826
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56364,24 +56114,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33a7c881b4aae24eac8a3a0a9fee1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startCraftingCategory: {fileID: 11400000, guid: e862ed643d87113409befb3d1830538e,
-    type: 2}
-  _cancelCraftingOnWindowClose: 0
+  _startCraftingCategory: {fileID: 0}
+  _cancelCraftingOnWindowClose: 1
   _forceSingleInstance: 0
-  mainItemsCollection: {fileID: 1794410467}
-  storeRewardUIItemsInCollection: {fileID: 1334967070}
-  blueprintItemResultContainer: {fileID: 1171828336}
-  blueprintItemResultPrefab: {fileID: 11430698, guid: 463a0ccbc70539340a0a080ffc17c150,
-    type: 2}
+  mainItemsCollection: {fileID: 0}
+  storeRewardUIItemsInCollection: {fileID: 0}
+  blueprintItemResultContainer: {fileID: 0}
+  blueprintItemResultPrefab: {fileID: 0}
   blueprintTitle: {fileID: 0}
   blueprintDescription: {fileID: 0}
-  blueprintCraftCost: {fileID: 2092503500}
+  blueprintCraftCost: {fileID: 0}
   blueprintCraftingProgress:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
-    slider: {fileID: 1958828332}
+    slider: {fileID: 0}
     hideSliderWhenZero: 0
     imageFill: {fileID: 0}
     activationClip:
@@ -56389,7 +56137,7 @@ MonoBehaviour:
       volume: 1
       pitch: 1
       loop: 0
-  blueprintCraftButton: {fileID: 393485443}
+  blueprintCraftButton: {fileID: 0}
   craftAnimation: {fileID: 0}
 --- !u!114 &1979815828
 MonoBehaviour:
@@ -56773,7 +56521,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2002591720}
-  - component: {fileID: 2002591721}
   - component: {fileID: 2002591722}
   - component: {fileID: 2002591723}
   m_Layer: 12
@@ -56799,20 +56546,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2002591721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114372954690287500, guid: a113b7c6392da75499abbc6d8a8387de,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2002591719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f64dfc5c7ed374d843a1af9faeed93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 3333333333333333333333333333333433333333333333363333333333333331333333333333333333333333333333363333333333333336333333333333333633333333333333333333333333333336333333333333333333333333333333383333333333333333333333333333333633333333333333363333333333333335333333333333333333333333333333323333333333333333333333333333333033333333333333333333333333333335333333333333333333333333333333333333333333333333333333333333333633333333333333363333333333333334333333333333333333333333333333363333333333333333333333333333333933333333333333333333333333333337333333333333333333333333333333343333333333333333333333333333333633333333333333333333333333333338
-  Rank: 33333333333333333333333333333333333333333333333333333333333333343333333333333333333333333333333633333333333333333333333333333331333333333333333333333333333333333333333333333333333333333333333733333333333333333333333333333333333333333333333333333333333333353333333333333333333333333333333333333333333333333333333333333336333333333333333333333333333333363333333333333333333333333333333533333333333333333333333333333333333333333333333333333333333333363333333333333333333333333333333333333333333333333333333333333339333333333333333333333333333333333333333333333333333333333333333633333333333333333333333333333336333333333333333333333333333333363333333333333333333333333333333333333333333333333333333333333337333333333333333333333333333333333333333333333333333333333333333233333333333333333333333333333333333333333333333333333333333333323333333333333333333333333333333333333333333333333333333333333330333333333333333333333333333333333333333333333333333333333333333433333333333333333333333333333333333333333333333333333333333333343333333333333333333333333333333333333333333333333333333333333336333333333333333333333333333333333333333333333333333333333333333533333333333333333333333333333333333333333333333333333333333333373333333333333333333333333333333333333333333333333333333333333334333333333333333333333333333333333333333333333333333333333333333633333333333333333333333333333333333333333333333333333333333333353333333333333333333333333333333333333333333333333333333333333336333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333373333333333333333333333333333333333333333333333333333333333333334333333333333333333333333333333333333333333333333333333333333333633333333333333333333333333333333333333333333333333333333333333393333333333333333333333333333333333333333333333333333333333333337333333333333333333333333333333333333333333333333333333333333333633333333333333333333333333333333333333333333333333333333333333363333333333333333333333333333333333333333333333333333333333333335
 --- !u!114 &2002591722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57384,6 +57117,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &2023780134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57775,14 +57509,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f43e6544f4cf94daa2d7143ed458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collection: {fileID: 1306470929}
-  _currency: {fileID: 11400000, guid: 9ecfec717ca7b6b408adc4585f2d7d3d, type: 2}
+  collection: {fileID: 0}
+  _currency: {fileID: 0}
   currencyUIElement:
-    _overrideStringFormat: 1
-    _overrideStringFormatString: '{0}'
+    _overrideStringFormat: 0
+    _overrideStringFormatString: 
     _hideWhenEmpty: 0
-    _amount: {fileID: 1768155647}
-    _icon: {fileID: 1737796937}
+    _amount: {fileID: 0}
+    _icon: {fileID: 0}
 --- !u!222 &2039498093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58010,6 +57744,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &2064690608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58203,9 +57938,9 @@ MeshCollider:
   m_Material: {fileID: 13400000, guid: 3aeb7dadc0c69d54d9e5777e9d5631f1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: 28d592096e7e76148945c98658a6c011, type: 3}
 --- !u!1 &2070744387
@@ -58360,10 +58095,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tasksFilter: 2
-  showOverAchievement: 1
-  progressRowUIPrefab: {fileID: 11425852, guid: e6d2bf28bd70978468ecf1144681d5b9,
-    type: 2}
-  questsContainer: {fileID: 1885993958}
+  showOverAchievement: 0
+  progressRowUIPrefab: {fileID: 0}
+  questsContainer: {fileID: 0}
 --- !u!114 &2071660121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58376,9 +58110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: QuestSidebar
-  hideOnStart: 0
-  resetPositionOnStart: 0
+  windowName: MyWindow
+  hideOnStart: 1
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -58730,6 +58464,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &2077854843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58742,7 +58477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e31518f4f0b14e965c2eec4ae0f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: 01000000
+  status: 
   onlyShowWhenCompletable: 0
   onlyShowWhenNotCompletable: 0
   onEnable:
@@ -58847,6 +58582,7 @@ MonoBehaviour:
   m_PreferredHeight: 24
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &2080979899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59271,6 +59007,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &2092503502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59507,6 +59244,7 @@ MonoBehaviour:
   m_PreferredHeight: 23
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &2099468786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59603,6 +59341,7 @@ MonoBehaviour:
   m_PreferredHeight: 40
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &2100320881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59615,9 +59354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30fa5a8553dbe748825e5f87d7b08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 1844446555}
-  itemName: {fileID: 290998802}
-  icon: {fileID: 2042700033}
+  amountText: {fileID: 0}
+  itemName: {fileID: 0}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -59739,9 +59478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f3b4326c78e364b854e4db36c8d252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowName: DragAccept
+  windowName: MyWindow
   hideOnStart: 1
-  resetPositionOnStart: 0
+  resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
   _showAnimation:
@@ -59849,6 +59588,7 @@ MonoBehaviour:
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &2104285105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59868,16 +59608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d03055a06fa6f4abb81bca3156a8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookups:
-  - key: Face1
-    position: {x: -1.7285033, y: 1.3722115, z: 3.245102}
-    rotation: {x: 0.02466101, y: 0.9737846, z: -0.12958466, w: 0.1853191}
-    useWorldSpace: 0
-  - key: Face2
-    position: {x: 1.6438617, y: 1.5104814, z: 2.9273682}
-    rotation: {x: -0.054712314, y: 0.94316936, z: -0.19695245, w: -0.2620073}
-    useWorldSpace: 0
-  uniqueName: PlayerDialogueCamera
+  lookups: []
+  uniqueName: 
 --- !u!1 &2122246774
 GameObject:
   m_ObjectHideFlags: 0
@@ -60088,7 +59820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowName: MyWindow
-  hideOnStart: 0
+  hideOnStart: 1
   resetPositionOnStart: 1
   blockUIInput: 0
   blockPlayerInput: 0
@@ -60124,7 +59856,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   isDefaultPage: 1
   _isEnabled: 1
-  myButton: {fileID: 207561392}
+  myButton: {fileID: 0}
 --- !u!1 &2130081965
 GameObject:
   m_ObjectHideFlags: 0
@@ -60327,9 +60059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 238845503}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 2131762328}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
     textFormat: '{0}/{1}'
@@ -60507,8 +60239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9a25dcfece2544282b1b4676f967e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentTypes:
-  - {fileID: 11400000, guid: 127c7cc5e386f5745aaa0987865701eb, type: 2}
+  _equipmentTypes: []
 --- !u!114 &2138583218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60549,12 +60280,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b0ff7d52446914191164b1689efece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountText: {fileID: 1443059124}
+  amountText: {fileID: 0}
   itemName: {fileID: 0}
-  icon: {fileID: 902458778}
+  icon: {fileID: 0}
   cooldownVisualizer:
     textField: {fileID: 0}
-    textFormat: 3762333037643266376233313764
+    textFormat: '{0}/{1}'
     roundToDecimals: 1
     clearTextWhenZero: 1
     slider: {fileID: 0}

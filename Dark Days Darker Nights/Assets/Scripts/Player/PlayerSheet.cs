@@ -9,7 +9,7 @@ namespace DarkDays.Player
     /// DTO Class for holding the stats of the player, such as those
     /// found on a paper RPG's player sheet. SHould be as little code as possible
     /// </summary>
-    public class PlayerSheet : ScriptableObject
+    public class PlayerSheet : MonoBehaviour
     {
 
         public string Name;
